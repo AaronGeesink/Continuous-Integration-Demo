@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, CI-demo-section-26 ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, CI-demo-section-26 ]
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,12 +17,12 @@ jobs:
     steps: 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v3
-      with: 
-        submodules: recursive
+      #with: 
+      #  submodules: recursive
 
     # Here is how you run terminal commands using GitHub workflows
     - name: output some text to the terminal using echo
-      run: echo I just ran the echo command in the terminal
+      run: echo I ran the echo command in the terminal
 
     # Compile and run the Hello World program
     - name: Hello World
